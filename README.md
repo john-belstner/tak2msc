@@ -38,23 +38,30 @@ Acknowledgements:
 
 From a Windows or Anaconda Powershell...
 
-    (base) C:\Projects\tak2msc> python cotxml2file.py
+    (base) C:\Projects\tak2msc\python> python cotxml2file.py
 
     cotxml2file - CoT XML to File v1.0
 
     Saving CoT-John.Belstner.MARS-20241230T093120.xml
     Saving CoT-Route Blocked Auto Crash-20241230T093138.xml
+    >>> Ctrl+C detected, exiting...
+
+    (base) C:\Projects\tak2msc\python>
+
 
 ### Linux (Debian)
 
 From a Linux terminal...
 
-    ~/Projects/tak2msc$ python3 cotproto2file.py
+    ~/Projects/tak2msc/python$ python3 cotproto2file.py
 
     cotproto2file - CoT Protobuf to XML File v1.0
 
     Saving CoT-John.Belstner.MARS-20241230T093120.xml
     Saving CoT-Route Blocked Auto Crash-20241230T093138.xml
+    >>> Ctrl+C detected, exiting...
+
+    ~/Projects/tak2msc/python$
 
 
 

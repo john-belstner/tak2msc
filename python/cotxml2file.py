@@ -73,7 +73,7 @@ signal.signal(signal.SIGINT, signal_handler)
 # Main program
 if __name__ == '__main__':
     # Print the program version
-    print('\ncotxml2file - CoT XML to File v' + VERSION + '\n')
+    print('\ncotxml2file - CoT XML to File v' + str(VERSION) + '\n')
     # Setup the socket
     sock = setup_socket(BUFFER_SIZE)
     # Loop
