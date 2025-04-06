@@ -36,8 +36,8 @@ Acknowledgements:
 
 Whether running on Windows or Linux, the following python libraries are required. Most come pre-installed as part of the Python3 standard installation. Use Pip to install additional libraries as needed.
 
-- datetime
 - xml.etree.ElementTree
+- datetime
 - takproto
 - socket
 - struct
@@ -94,7 +94,7 @@ From a Windows or Anaconda Powershell...
 
     (base) C:\Projects\tak2msc\python> python tak2msc.py
 
-    ![base-gui-windows](images/base-gui-windows.png)
+![base-gui-windows](images/base-gui-windows.jpg)
 
 ### Linux (Debian)
 
@@ -102,5 +102,5 @@ From a Linux terminal...
 
     ~/Projects/tak2msc/python$ python3 tak2msc.py
 
-    ![base-gui-linux](images/base-gui-linux.png)
+![base-gui-linux](images/base-gui-linux.jpg)
 
