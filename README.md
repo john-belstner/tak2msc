@@ -74,33 +74,26 @@ From a Linux terminal...
 
     ~/Projects/tak2msc/python$
 
-## Running the Phase II Python script with GUI
+## Running the Phase II Python script (tak2cp.py)
 
 Whether running on Windows or Linux, the following python libraries are required. Most come pre-installed as part of the Python3 standard installation. Use Pip to install additional libraries as needed.
 
+- os
 - time
 - socket
-- pandas
-- hashlib
-- datetime
+- signal
 - threading
-- tkinter (tk)
-- configparser
 - xml.etree.ElementTree
 
 ### Windows
 
 From a Windows or Anaconda Powershell...
 
-    (base) C:\Projects\tak2msc\python> python tak2msc.py
-
-![base-gui-windows](images/base-gui-windows.jpg)
+    (base) C:\Projects\tak2msc\python> python tak2cp.py
 
 ### Linux (Debian)
 
 From a Linux terminal...
 
-    ~/Projects/tak2msc/python$ python3 tak2msc.py
-
-![base-gui-linux](images/base-gui-linux.jpg)
+    ~/Projects/tak2msc/python$ python3 tak2cp.py
 
