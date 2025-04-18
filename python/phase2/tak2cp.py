@@ -175,6 +175,7 @@ def cpListener(name):
             data_ = sock.recv(BUFFER_SIZE)
             # Check if the received data is an xml message
             data_string = data_.decode("utf-8")
+            payload_data_from_cp = ''
             debugPrint(data_string)
             if XML_HEADER in data_string:
                 xml_strings = data_string.split(XML_HEADER)
@@ -201,7 +202,7 @@ def cpListener(name):
                                 elif child.tag == 'PAYLOAD':
                                     for grandchild in child:
                                         if grandchild.tag == 'DATA':
-                                            data_from_cp = grandchild.text
+                                            payload_data_from_cp = grandchild.text
                     except Exception as e:
                         print(f"XML Parse Error: {e}")
                         continue
@@ -215,10 +216,9 @@ def cpListener(name):
                         print(f"    Key List: {keyList}")
                     elif command_ == 'ack':
                         print("Received Ack Event from CP...")
-                        data_from_cp = ''
-                    elif command_ == 'data' and COT_EVENT_HEADER in data_from_cp:
+                    elif command_ == 'data' and COT_EVENT_HEADER in payload_data_from_cp:
                         print("Received CoT XML Data Event from CP...")
-                        data_from_cp = TAK_XML_HEADER + '\n' + data_from_cp
+                        data_from_cp = TAK_XML_HEADER + '\n' + payload_data_from_cp
 
         except socket.timeout:
             # Check for data to send to CP
