@@ -29,7 +29,7 @@ import xml.etree.ElementTree as ET
 
 
 # Application specific constants
-VERSION = 0.5
+VERSION = 0.7
 LOCALHOST = '127.0.0.1'
 TAK_MCAST_GROUP = '239.2.3.1'
 TAK_MCAST_PORT = 6969
@@ -37,7 +37,8 @@ TAK_COTXML_PORT = 10001
 TAK_DEFAULT_PORT = 4242
 BUFFER_SIZE = 2048
 XML_HEADER = '<?xml version="1.0" encoding="UTF-8"?>'
-EVENT_HEADER = '<event version="2.0" '
+TAK_XML_HEADER = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+COT_EVENT_HEADER = '<event version="2.0" '
 MSG_MACHINE_PORT = 5003
 SA_EVENT_TYPE = 'type="a-f-G-U-C'
 PD_EVENT_TYPE = 'parent_callsign='
@@ -144,7 +145,7 @@ def cotXmlListener(name):
         sock.bind((LOCALHOST, TAK_COTXML_PORT))
     except socket.error as e:
         print(f"Socket error: {e}")
-        os.exit(1)
+        os._exit(1)
 
     # Loop
     while started:
@@ -154,7 +155,7 @@ def cotXmlListener(name):
             # Check if the received data is a CoT xml message
             data_string = data.decode("utf-8")
             print(data_string)
-            if not EVENT_HEADER in data_string:
+            if not COT_EVENT_HEADER in data_string:
                 continue
             # Split the CoT xml message into two lines
             # The first line is just an xml header and the second line is the CoT event
@@ -335,7 +336,7 @@ if __name__ == '__main__':
     # Check to make sure we can access Message Creator and Message Machine
     if not os.path.exists(IMPORTS_PATH):
         print("MSC installation not found!")
-        os.exit(1)
+        os._exit(1)
     elif not os.path.exists(TAK2MSC_PATH):
         os.makedirs(TAK2MSC_PATH)
 
@@ -349,7 +350,7 @@ if __name__ == '__main__':
         cotXmlThread.start()
     except Exception as e:
         print(f"Error starting CoT XML Listener thread: {e}")
-        os.exit(1)
+        os._exit(1)
 
     # Start the CP Listener thread
     try:
