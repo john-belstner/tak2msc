@@ -127,6 +127,8 @@ Whether running on Windows or Linux, the following python libraries are required
 - time
 - socket
 - signal
+- shutil
+- hashlib
 - threading
 - xml.etree.ElementTree
 
